@@ -1,0 +1,51 @@
+Here's a step-by-step guide for managing users and roles in Jenkins for GitHub integration:
+
+**Step 1: Access Jenkins**
+- Open your web browser and navigate to the Jenkins login page: http://ip:8080
+
+**Step 2: Log In**
+- Enter your username and password to log in to Jenkins with administrative privileges.
+
+**Step 3: Create New User**
+- Navigate to Jenkins Dashboard → Manage Jenkins → Users → Create User.
+- Enter the user name, password, full name, and email address.
+- Click the "Create User" button.
+
+**Step 4: Configure Users**
+- After logging in, you may see the user's name in the upper right corner of Jenkins.
+- Click "Configure" on the user's drop-down menu.
+- On the configuration page, update the description, add new API tokens, password, terminal sessions, and define time zones.
+
+**Step 5: Download and Install Role-based Authorization Strategy Plugin**
+- Go to Manage Jenkins → Plugins → Available plugins.
+- Search for "Role" in the search box.
+- In the dropdown list, select "Role-based Authentication Strategy" plugin.
+- Click "Install without restart" to install the plugin.
+
+**Step 6: Change Authorization to Role-based Strategy**
+- After successful installation, go to Manage Jenkins → Security.
+- Select "Role-Based Strategy" under the Authorization section.
+- Click "Apply" and then "Save."
+
+**Step 7: Creating Roles and Granting Privileges**
+- Go to Manage Jenkins → Manage and Assign Roles.
+- You have three options: "Manage Roles," "Assign Roles," and "Role Strategy Macros."
+- Click "Manage Roles" to view existing roles.
+- Create a new role, e.g., "Employee," for global access and define permissions (e.g., read, view).
+
+**Step 8: Assigning Roles to Users**
+- Go to Manage Jenkins → Manage and Assign Roles → Assign Roles.
+- For global roles, add users (e.g., aashish and naba) and assign the "Employee" role to them.
+- For project roles, add users (e.g., aashish and naba) and assign roles like "Developer" and "QA."
+
+**Step 9: Create Different Projects to Test Roles**
+- Create test projects to check user access.
+- Go to Jenkins Dashboard → New Item → Create freestyle projects (e.g., devproj1 and testproj1).
+- Log in as a user with assigned roles to see the projects they have access to.
+
+**Step 10: Verify Access**
+- Log in as aashish (Developer) user to verify their access.
+- Log in as naba (QA) user to verify their access.
+- For new users without assigned roles, access should be denied.
+
+This guide helps you manage users and roles in Jenkins for GitHub integration, ensuring proper access control and permissions.
